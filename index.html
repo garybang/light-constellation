@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Light Constellation</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; }
+    body { overflow: hidden; background: #fff; cursor: none; }
+    canvas { display: block; }
+
+    #theme-switcher {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 10;
+    }
+    #theme-switcher table {
+      border-collapse: collapse;
+      border: 1px solid #000;
+      background: #fff;
+    }
+    #theme-switcher table.dark {
+      border-color: #888;
+      background: #222;
+    }
+    #theme-switcher td {
+      width: 36px;
+      height: 36px;
+      text-align: center;
+      vertical-align: middle;
+      border: 1px solid #000;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      color: #000;
+      background: #fff;
+      transition: background 0.2s, color 0.2s;
+    }
+    #theme-switcher table.dark td {
+      border-color: #888;
+      color: #ccc;
+      background: #222;
+    }
+    #theme-switcher td.active {
+      background: #000;
+      color: #fff;
+    }
+    #theme-switcher table.dark td.active {
+      background: #fff;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div id="theme-switcher">
+    <table>
+      <tr>
+        <td id="btn-bauhaus" class="active" onclick="switchTheme('bauhaus')">A</td>
+        <td id="btn-basquiat" onclick="switchTheme('basquiat')">B</td>
+        <td id="btn-margiela" onclick="switchTheme('margiela')">C</td>
+      </tr>
+    </table>
+  </div>
+  <script src="sketch.js"></script>
+</body>
+</html>
